@@ -905,3 +905,21 @@ footer {
 .app-slider {
   will-change: transform;
 }
+
+@media (max-width: 760px) {
+  .floating.float-2 {
+    display: none;
+  }
+
+  .hero-visual {
+    min-height: 28rem;
+  }
+
+  .photo-wrap {
+    inset: 6% 8% 28% 8%; /* you can tweak bottom inset now that top card is gone */
+  }
+
+  .photo-wrap img {
+    object-position: center 5%;
+  }
+}
