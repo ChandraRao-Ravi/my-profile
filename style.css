@@ -924,25 +924,88 @@ footer {
   }
 }
 
-.nav-phone {
-  font-size: var(--text-xs);
-  color: var(--color-text-muted);
+.contact-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--space-4);
+  margin-top: var(--space-8);
 }
 
-/* desktop: show as plain text (no obvious CTA styling) */
-.nav-phone-link {
-  text-decoration: none;
-  color: inherit;
-  pointer-events: none;   /* disable click on desktop */
+.contact-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.6rem 1.1rem;
+  border-radius: 999px;
+  border: 1px solid var(--color-border);
+  background: color-mix(in srgb,var(--color-surface-2) 88%,transparent);
+  font-size: var(--text-sm);
+  font-weight: 500;
+  color: var(--color-text);
+  transition: background var(--transition-interactive), transform var(--transition-interactive), border-color var(--transition-interactive);
 }
 
-/* mobile: enable tap-to-call and make it a bit more tappable */
+.contact-chip.primary {
+  background: var(--color-primary);
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(0,113,227,.35);
+}
+
+.contact-chip:hover {
+  transform: translateY(-1px);
+  border-color: color-mix(in srgb,var(--color-primary) 32%,var(--color-border));
+}
+
+.chip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.3rem;
+  height: 1.3rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+}
+
+/* phone label swap */
+.phone-label-mobile {
+  display: none;
+}
+
 @media (max-width: 760px) {
-  .nav-phone-link {
+  .contact-actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .contact-chip {
+    justify-content: center;
+  }
+
+  .phone-label-desktop {
+    display: none;
+  }
+
+  .phone-label-mobile {
+    display: inline;
+  }
+}
+/* default: looks normal, but desktop cannot click */
+.phone-chip {
+  pointer-events: none;
+}
+
+/* enable tap-to-call only on mobile widths */
+@media (max-width: 760px) {
+  .phone-chip {
     pointer-events: auto;
-    padding: 0.25rem 0.6rem;
-    border-radius: 999px;
-    border: 1px solid var(--color-border);
-    background: color-mix(in srgb,var(--color-surface-2) 82%,transparent);
+  }
+
+  .phone-label-desktop {
+    display: none;
+  }
+
+  .phone-label-mobile {
+    display: inline;
   }
 }
