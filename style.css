@@ -1012,3 +1012,49 @@ footer {
     display: inline;
   }
 }
+
+/* desktop: show "Copy email", disable native mailto */
+.email-label-mobile {
+  display: none;
+}
+
+/* mobile: normal mailto behavior */
+@media (max-width: 760px) {
+  .email-chip {
+    pointer-events: auto;
+  }
+
+  .email-label-desktop {
+    display: none;
+  }
+
+  .email-label-mobile {
+    display: inline;
+  }
+}
+
+.email-chip.copied {
+  box-shadow: 0 0 0 2px color-mix(in srgb,var(--color-primary) 40%,transparent);
+}
+
+.copy-toast {
+  position: fixed;
+  left: 50%;
+  bottom: 32px;
+  transform: translateX(-50%);
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--color-primary) 90%, #000 10%);
+  color: white;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease-out, transform 0.2s ease-out;
+  z-index: 9999;
+}
+
+.copy-toast.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(-4px);
+}

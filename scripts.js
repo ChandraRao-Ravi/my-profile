@@ -91,3 +91,41 @@
     }, { threshold: 0.18 });
     document.querySelectorAll('[data-reveal]').forEach((el) => observer.observe(el));
 })();
+
+(function () {
+  const emailChip = document.querySelector('.email-chip');
+  if (!emailChip) return;
+
+  const email = 'chandrarao.ravi@gmail.com';
+
+  function showCopyToast() {
+    let toast = document.querySelector('.copy-toast');
+    if (!toast) {
+      toast = document.createElement('div');
+      toast.className = 'copy-toast';
+      toast.textContent = 'Email copied';
+      document.body.appendChild(toast);
+    }
+
+    toast.classList.add('show');
+    clearTimeout(toast._hideTimeout);
+    toast._hideTimeout = setTimeout(() => {
+      toast.classList.remove('show');
+    }, 1200);
+  }
+
+  emailChip.addEventListener('click', function (e) {
+    const isMobile = window.matchMedia('(max-width: 760px)').matches;
+    if (isMobile) return; // mobile: let mailto work
+
+    e.preventDefault();
+
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(email)
+        .then(showCopyToast)
+        .catch(showCopyToast); // still show feedback even if it fails silently
+    } else {
+      showCopyToast();
+    }
+  });
+})();
