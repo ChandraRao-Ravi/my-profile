@@ -78,11 +78,14 @@ html {
 }
 
 body {
-    min-height: 100dvh;
-    font-family: var(--font-body);
-    background: radial-gradient(circle at top, rgba(0, 113, 227, .08), transparent 28%), linear-gradient(180deg, var(--color-bg), var(--color-bg));
-    color: var(--color-text);
-    line-height: 1.55
+  min-height: 100dvh;
+  font-family: var(--font-body);
+  background-color: #050816; /* solid base, matches theme-color for light */
+  background-image:
+    radial-gradient(circle at top, rgba(0,113,227,.08), transparent 28%),
+    linear-gradient(180deg, #050816, #050816);
+  color: var(--color-text);
+  line-height: 1.55;
 }
 
 a {
