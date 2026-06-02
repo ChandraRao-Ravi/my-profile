@@ -1142,3 +1142,13 @@ footer {
 .card p {
   color: var(--color-text-muted);
 }
+
+.footer-row a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+.footer-row a:hover,
+.footer-row a:focus-visible {
+  text-decoration: underline;
+}
