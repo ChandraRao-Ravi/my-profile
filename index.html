@@ -45,6 +45,7 @@
                 <a href="#case-studies">Case studies</a>
                 <a href="#experience">Experience</a>
                 <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
                 <a href="#contact">Contact</a>
                 <a href="#blogs">Blogs</a>
             </nav>
@@ -455,6 +456,108 @@
                     </article>
             </div>
             </article>
+            </div>
+        </section>
+
+        <section class="container section" id="projects">
+  <div class="section-head section-head-compact" data-reveal>
+    <span class="eyebrow">Personal projects</span>
+    <h2>Exploring new platform capabilities beyond production apps.</h2>
+    <p>
+      Outside of work, I prototype ideas in SwiftUI, Siri, App Intents, and
+      platform APIs to stay hands-on and experiment with new patterns before
+      they land in real products.
+    </p>
+  </div>
+
+            <div class="bento">
+                <article class="card span-7" data-case-study data-reveal>
+                    <div class="label">SiriVoicePayments · iOS 18 POC</div>
+                    <h3>Voice-first payment initiation with Siri and App Intents.</h3>
+
+                    <p>
+                        A learning project that explores how far you can push Siri, App Intents,
+                        and App Shortcuts for secure, voice-driven payment prep flows without
+                        actually moving real money.
+                    </p>
+
+                    <ul class="mini-list" role="list">
+                        <li>
+                            <span>What it does</span>
+                            <strong>Trigger a payment draft from Siri or Shortcuts, then confirm in-app.</strong>
+                        </li>
+                        <li>
+                            <span>How it works</span>
+                            <strong>AppEntity + EntityQuery to resolve saved beneficiaries, then open a prefilled
+                                SwiftUI screen.</strong>
+                        </li>
+                        <li>
+                            <span>Why it matters</span>
+                            <strong>Shows how to keep critical steps (auth, final confirmation) inside the app instead
+                                of a black-box voice flow.</strong>
+                        </li>
+                    </ul>
+
+                    <div class="case-metrics">
+                        <div class="case-metric-row">
+                            <span>Stack</span>
+                            <span>SwiftUI, App Intents, App Shortcuts, iOS 18+</span>
+                        </div>
+                        <div class="case-metric-row">
+                            <span>Focus</span>
+                            <span>UX for voice-triggered flows, safety limits, and draft-first payments</span>
+                        </div>
+                        <div class="case-metric-row">
+                            <span>Code</span>
+                            <span><a href="https://github.com/ChandraRao-Ravi/siri-money-transfer-poc" target="_blank"
+                                    rel="noopener noreferrer">View on GitHub</a></span>
+                        </div>
+                    </div>
+                </article>
+
+                <article class="card span-5" data-app-slider data-reveal>
+                    <div class="label">Screens from the POC</div>
+                    <div class="app-phone">
+                        <div class="app-phone-frame">
+                            <div class="app-slider" data-app-track>
+                                <div class="app-slide">
+                                    <img src="assets/siri-voice-payments-1.png" alt="Siri Voice Payments Shortcuts screen">
+                                </div>
+                                <div class="app-slide">
+                                    <img src="assets/siri-voice-payments-2.png"
+                                        alt="Siri Voice Payments Shortcuts, contacts screen">
+                                </div>
+                                <div class="app-slide">
+                                    <img src="assets/siri-voice-payments-3.png" alt="Siri Voice Payments screen with details about the payment draft">
+                                </div>
+                                <div class="app-slide">
+                                    <img src="assets/siri-voice-payments-4.png" alt="Siri Voice Payments confirmation screen with Pay button">
+                                </div>
+                                <div class="app-slide">
+                                    <img src="assets/siri-voice-payments-5.png" alt="Siri Voice Payments confirmation screen">
+                                </div>
+                            </div>
+                            <div class="app-dots" data-app-dots>
+                                <button class="app-dot is-active" type="button"
+                                    aria-label="Show first Siri Voice Payments screenshot"></button>
+                                <button class="app-dot" type="button"
+                                    aria-label="Show second Siri Voice Payments screenshot"></button>
+                                    <button class="app-dot" type="button"
+                                    aria-label="Show third Siri Voice Payments screenshot"></button>
+                                    <button class="app-dot" type="button"
+                                    aria-label="Show fourth Siri Voice Payments screenshot"></button>
+                                    <button class="app-dot" type="button"
+                                    aria-label="Show fifth Siri Voice Payments screenshot"></button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p style="margin-top:1.5rem;">
+                        These screens are purely demo flows: no real UPI or bank integration,
+                        but the intent is to explore UX, entities, and confirmation flows that
+                        would translate cleanly into production rails.
+                    </p>
+                </article>
             </div>
         </section>
 

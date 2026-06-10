@@ -1152,3 +1152,32 @@ footer {
 .footer-row a:focus-visible {
   text-decoration: underline;
 }
+
+#projects .card[data-case-study] {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Compact header for sections like Personal projects / Blogs */
+.section-head-compact {
+  max-width: 52rem;
+  margin-bottom: var(--space-8);
+}
+
+.section-head-compact .eyebrow {
+  width: max-content;
+  margin-bottom: var(--space-4);
+}
+
+.section-head-compact h2 {
+  max-width: 16ch;
+  font-size: clamp(2.2rem, 4vw, 4rem);
+  line-height: 1.02;
+  letter-spacing: -0.04em;
+}
+
+.section-head-compact p {
+  max-width: 42rem;
+  font-size: var(--text-base);
+  margin-top: var(--space-4);
+}
