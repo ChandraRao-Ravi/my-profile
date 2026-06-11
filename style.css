@@ -1181,3 +1181,19 @@ footer {
   font-size: var(--text-base);
   margin-top: var(--space-4);
 }
+
+.ai-metrics li {
+  display: grid;
+  grid-template-columns: 7.5rem minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.ai-metrics li span {
+  color: var(--color-text-faint);
+  white-space: nowrap;
+}
+
+.ai-metrics li strong {
+  font-weight: 600;
+}
